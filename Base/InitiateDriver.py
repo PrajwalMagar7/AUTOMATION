@@ -1,4 +1,4 @@
-from selenium.webdriver import Edge, Firefox
+from selenium.webdriver import Edge, Firefox,Chrome
 from Library.ConfigReader import configRead
 
 def startBrowser():
@@ -8,7 +8,7 @@ def startBrowser():
     elif configRead('Details', 'browser')=='edge':
         driver = Edge()    
     else:
-        driver = Firefox()
+        driver = Chrome()
 
     driver.get(configRead('Details','APP_URL'))
     driver.maximize_window()
